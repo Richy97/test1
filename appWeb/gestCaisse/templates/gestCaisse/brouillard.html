@@ -1,0 +1,307 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Django People</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gestCaisse/bootstrap-5.1.3/bootstrap-5.1.3/dist/css/bootstrap.css' %}" type="text/css">
+    <script src="{% static 'gestCaisse/bootstrap-5.1.3/bootstrap-5.1.3/dist/js/bootstrap.bundle.min.js' %}"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="/gestCaisse/gestCaisse">YIETO'O CAISSE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">|</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Base : YIETO'O</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">{{date}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Utilisateur connect : {{emp1.login}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/gestCaisse/logout">se deconnecter</a>
+            </li>
+           </ul>
+           </div>
+         </div>
+
+      </nav>
+    </header>
+      <div class="row">
+        <div class="col-lg-2">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Structure
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#" class="nav-link">Employer</a></li>
+                    <li class="list-group-item"><a href="#" class="nav-link">Tier</a></li>
+                    <li class="list-group-item"><a href="#" class="nav-link">Caisse</a></li>  
+                    <li class="list-group-item"><a href="#" class="nav-link">Type Tier</a></li>
+                </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                 Traitement
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="/gestCaisse/operation" class="nav-link">Operation</a></li>
+                    <li class="list-group-item"><a href="/gestCaisse/brouillard" class="nav-link">Brouilllard Caisse</a></li>
+                </ul>
+                 </div>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+         <br>
+         <div class="container"></div>
+          <div class="row" style="min-height: 500px;">
+              <div class="table-responsive-lg">
+                <table class="table table-striped">
+                    <thead>
+                        <th scope="col">Numero piece</th>
+                        <th scope="col">Reference</th>
+                        <th scope="col">numero compte general </th>
+                        <th scope="col">numero compte tier</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Debit</th>
+                        <th scope="col">Credit</th>
+                    </thead>
+                    <tbody>
+                      {% for element in form1 %}
+                        <tr>
+                          {% if element.idOperation.idCategorie.libele == "Ecaissement" %}
+                              {% if element.sens == "Debit" %}
+                                  <td>{{element.idOperation}}</td>
+                                  <td>{{element.idOperation.reference}}</td>
+                                  <td>{{element.idOperation.idTier.idCT.idCompteG}}</td>
+                                  <td>{{element.idOperation.idTier.codeTier}}</td>
+                                  <td>{{element.idOperation.description}}</td>
+                                  <td>{{element.idOperation.montant}}</td>
+                                  <td></td>
+                              {% else %}
+                                  <td>{{element.idOperation}}</td>
+                                  <td>{{element.idOperation.reference}}</td>
+                                  <td>{{element.idOperation.idCaisse.idCompteG}}</td>
+                                  <td></td>
+                                  <td>{{element.idOperation.description}}</td>
+                                  <td></td>
+                                  <td>{{element.idOperation.montant}}</td>
+                              {% endif %}
+                          {% else %}
+                              {% if element.sens == "Debit" %}
+                                  <td>{{element.idOperation}}</td>
+                                  <td>{{element.idOperation.reference}}</td>
+                                  <td>{{element.idOperation.idCaisse.idCompteG}}</td>
+                                  <td></td>
+                                  <td>{{element.idOperation.description}}</td>
+                                  <td>{{element.idOperation.montant}}</td>
+                                  <td></td>
+                                  
+                              {% else %}
+                                  <td>{{element.idOperation}}</td>
+                                  <td>{{element.idOperation.reference}}</td>
+                                  <td>{{element.idOperation.idTier.idCT.idCompteG}}</td>
+                                  <td>{{element.idOperation.idTier.codeTier}}</td>
+                                  <td>{{element.idOperation.description}}</td>
+                                  <td></td>
+                                  <td>{{element.idOperation.montant}}</td>
+                                  
+                                {% endif %}
+                          {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          </div>
+              
+         </div>
+          <div class="col-lg-1">
+            <br>
+            <div><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+              <i class="bi bi-search" style="width: 40px;"></i>
+            </button></div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Recherche</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/gestCaisse/operation/" method="post">
+                      <h5 class="modal-title" id="staticBackdropLabel">Recherche par periode</h5>
+                      <br>
+                      {% csrf_token %}
+                      <div class="row">
+                        <input class="form-control" type="hidden" name="test" value="date">
+                        <div class="col-lg-6">
+                          <label for="">debut periode</label>
+                          <input class="form-control" type="date" name="debut" id="login">
+                        </div>
+                        <div class="col-lg-6">
+                          <label for="">fin periode</label>
+                          <input class="form-control" type="date" name="fin" id="login">
+                        </div>
+                        </div>
+                      <button class="btn btn-primary" type="submit">Envoyer</button>
+                    </form>
+                    <hr>
+                    <form action="/gestCaisse/operation/" method="post">
+                      <h5 class="modal-title" id="staticBackdropLabel">Recherche par montant</h5>
+                      <br>
+                      {% csrf_token %}
+                      <input class="form-control" type="hidden" name="test" value="montant">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <label for="">Minimum</label>
+                          <input class="form-control" type="text" name="min" id="login">
+                        </div>
+                        <div class="col-lg-6">
+                          <label for="">maximum</label>
+                          <input class="form-control" type="text" name="max" id="login">
+                        </div>
+                        </div>
+                      <button class="btn btn-primary" type="submit">Envoyer</button>
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" >
+              <i class="bi bi-file-earmark-pdf-fill" style="width: 40px;"></i>
+            </button></div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/gestCaisse/pdf/" method="post">
+                      <h5 class="modal-title" id="staticBackdropLabel">Brouillard par periode</h5>
+                      <br>
+                      {% csrf_token %}
+                      <div class="row">
+                        <input class="form-control" type="hidden" name="test" value="date">
+                        <div class="col-lg-6">
+                          <label for="">debut periode</label>
+                          <input class="form-control" type="date" name="debut" id="login">
+                        </div>
+                        <div class="col-lg-6">
+                          <label for="">fin periode</label>
+                          <input class="form-control" type="date" name="fin" id="login">
+                        </div>
+                        </div>
+                        <br>
+                      <button class="btn btn-primary" type="submit">Generer</button>
+                    </form>
+                     </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" >
+              <i class="bi bi-file-earmark-text-fill" style="width: 40px;"></i>
+            </button></div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/gestCaisse/fcsv/" method="post">
+                      <h5 class="modal-title" id="staticBackdropLabel">Brouillard par periode</h5>
+                      <br>
+                      {% csrf_token %}
+                      <div class="row">
+                        <input class="form-control" type="hidden" name="test" value="date">
+                        <div class="col-lg-6">
+                          <label for="">debut periode</label>
+                          <input class="form-control" type="date" name="debut" id="login">
+                        </div>
+                        <div class="col-lg-6">
+                          <label for="">fin periode</label>
+                          <input class="form-control" type="date" name="fin" id="login">
+                        </div>
+                        </div>
+                        <br>
+                      <button class="btn btn-primary" type="submit">Generer</button>
+                    </form>
+                     </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+          </div>
+     
+     <!-- Footer -->
+     <footer class="text-center text-white" style="background-color: #0a4275;">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: CTA -->
+        <section class="">
+        <br>
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-3">Register for free</span>
+            <a href="register.php"><button type="button" class="btn btn-outline-light btn-rounded">
+              Sign up!
+            </button></a>
+          </p>
+        </section>
+        <!-- Section: CTA -->
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="#">companie.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </body>
+</html>
+

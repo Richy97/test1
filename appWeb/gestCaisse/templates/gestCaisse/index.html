@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Accueil</title>
+	<meta name="description" content="Droopy is a Dashboard & Admin Site Responsive Template by hencework." />
+	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Droopy Admin, Droopyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
+	<meta name="author" content="hencework"/>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	{% load static %}
+	<!-- Data table CSS -->
+	<link href="{% static 'gestCaisse/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css'%}" rel="stylesheet" type="text/css"/>
+	
+	<link href="{% static 'gestCaisse/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css'%}" rel="stylesheet" type="text/css"/>
+	<link href="{% static 'gestCaisse/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css'%}" rel="stylesheet" type="text/css"/>
+	<link href="{% static 'gestCaisse/vendors/bower_components/owl.carousel/dist/assets/owl.carousel.min.css'%}" rel="stylesheet" type="text/css"/>
+	<link href="{% static 'gestCaisse/vendors/bower_components/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css"/>
+	<link href="{% static 'gestCaisse/vendors/bower_components/owl.carousel/dist/assets/owl.theme.default.min.css'%}" rel="stylesheet" type="text/css"/>
+	<link href="{% static 'gestCaisse/vendors/bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css'%}" rel="stylesheet" type="text/css"/>
+	
+	<!-- Toast CSS -->
+	<link href="{% static 'gestCaisse/vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css'%}" rel="stylesheet" type="text/css">
+		
+	<!-- Custom CSS -->
+	<link href="{% static 'gestCaisse/dist/css/style.css'%}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!-- Preloader -->
+	<div class="preloader-it">
+		<div class="la-anim-1"></div>
+	</div>
+	<!-- /Preloader -->
+    <div class="wrapper  theme-1-active pimary-color-green">
+		<!-- Top Menu Items YIETO'O CAISSE-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="mobile-only-brand pull-left">
+				<div class="nav-header pull-left">
+					<div class="logo-wrap">
+						<a href="/gestCaisse/">
+							<img class="brand-img" src="../img/logo.png" alt=""/>
+							<span class="brand-text">YIETO'O CAISSE</span>
+						</a>
+					</div>
+				</div>	
+				<a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block ml-20 pull-left" href="javascript:void(0);"><i class="zmdi zmdi-menu"></i></a>
+				<a id="toggle_mobile_search" data-toggle="collapse" data-target="#search_form" class="mobile-only-view" href="javascript:void(0);"><i class="zmdi zmdi-search"></i></a>
+				<a id="toggle_mobile_nav" class="mobile-only-view" href="javascript:void(0);"><i class="zmdi zmdi-more"></i></a>
+				
+			</div>
+			<div id="mobile_only_nav" class="mobile-only-nav pull-right">
+				<ul class="nav navbar-right top-nav pull-right">
+					
+			
+					<li class="dropdown auth-drp">
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
+						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+							<li>
+								<a href="profile.html"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="zmdi zmdi-card"></i><span>my balance</span></a>
+							</li>
+							<li>
+								<a href="inbox.html"><i class="zmdi zmdi-email"></i><span>Inbox</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="zmdi zmdi-settings"></i><span>Settings</span></a>
+							</li>
+							<li class="divider"></li>
+							<li class="sub-menu show-on-hover">
+								<a href="#" class="dropdown-toggle pr-0 level-2-drp"><i class="zmdi zmdi-check text-success"></i> available</a>
+								<ul class="dropdown-menu open-left-side">
+									<li>
+										<a href="#"><i class="zmdi zmdi-check text-success"></i><span>available</span></a>
+									</li>
+									<li>
+										<a href="#"><i class="zmdi zmdi-circle-o text-warning"></i><span>busy</span></a>
+									</li>
+									<li>
+										<a href="#"><i class="zmdi zmdi-minus-circle-outline text-danger"></i><span>offline</span></a>
+									</li>
+								</ul>	
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>	
+		</nav>
+		<!-- /Top Menu Items -->
+		
+		<!-- Left Sidebar Menu -->
+		<div class="fixed-sidebar-left">
+			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li class="navigation-header">
+					<span>Main</span> 
+					<i class="zmdi zmdi-more"></i>
+				</li>
+				<li>
+					<a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr3"><div class="pull-left"><i class="zmdi zmdi-landscape mr-20"></i><span class="right-nav-text">Dashboard</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="dashboard_dr3" class="collapse collapse-level-1">
+						<li>
+							<a href="#">Accueil</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr1"><div class="pull-left"><i class="zmdi zmdi-smartphone-setup mr-20"></i><span class="right-nav-text">Fichier </span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr1" class="collapse collapse-level-1">
+						
+						<li>
+							<a href="/gestCaisse/brouillards">Paramètres sociétés</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-settings mr-20"></i><span class="right-nav-text">Structure</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="dashboard_dr" class="collapse collapse-level-1">
+						<li>
+							<a class="active-page" href="/gestCaisse/employe">Employés</a>
+						</li>
+						<li>
+							<a href="/gestCaisse/tiers">Tiers</a>
+						</li>
+						<li>
+							<a href="/gestCaisse/caisse">Caisse</a>
+						</li>
+						<li>
+							<a href="/gestCaisse/compteTiers">Type de tiers</a>
+						</li>
+						<li>
+							<a href="/gestCaisse/categorie">Catégorie</a>
+						</li>
+						<li>
+							<a href="/gestCaisse/compteG">Compte Général</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr2"><div class="pull-left"><i class="zmdi zmdi-apps mr-20"></i><span class="right-nav-text">Traitement</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr2" class="collapse collapse-level-1">
+						
+						<li>
+							<a href="#operation" data-toggle="modal" data-bs-target="modal" data-toggle="tooltip" class="mr-25" data-original-title="Edit">Opération </a>
+							<a href="/gestCaisse/operations">Opération</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-book mr-20"></i><span class="right-nav-text">Etat </span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+						<li>
+							<a href="#brouillard" data-toggle="modal" data-bs-target="modal" data-toggle="tooltip" class="mr-25" data-original-title="Edit">Brouillard  </a>
+							<a href="/gestCaisse/brouillards">Brouillard</a>
+						</li>
+						
+					</ul>
+				</li>
+				
+			</ul>
+			
+		</div>
+		<!-- /Left Sidebar Menu -->
+		
+		<!-- Right Sidebar Menu -->
+		
+		<!-- /Right Sidebar Menu -->
+		
+		
+		
+		<!-- Right Sidebar Backdrop -->
+		<div class="right-sidebar-backdrop"></div>
+		<!-- /Right Sidebar Backdrop -->
+
+        <!-- Main Content -->
+		<div class="page-wrapper">
+            <div class="container-fluid pt-25">
+				<!-- Row -->
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                       <div class="panel panel-default card-view panel-refresh">
+								<div class="refresh-container">
+									<div class="la-anim-1"></div>
+								</div>
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">Budget</h6>
+									</div>
+									<div class="pull-right">
+										<a href="#" class="pull-left inline-block refresh">
+											<i class="zmdi zmdi-replay"></i>
+										</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div id="e_chart_3" class="" style="height:294px;"></div>
+										<div class="label-chatrs mt-15">
+											<div class="inline-block mr-15">
+												<span class="clabels inline-block bg-green mr-5"></span>
+												<span class="clabels-text font-12 inline-block txt-dark capitalize-font">planned</span>
+											</div>
+											<div class="inline-block">
+												<span class="clabels inline-block bg-light-green mr-5"></span>
+												<span class="clabels-text font-12 inline-block txt-dark capitalize-font">actual</span>
+											</div>									
+										</div>
+									</div>	
+								</div>
+						</div>
+					</div>
+				
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                       <div class="panel panel-default card-view panel-refresh">
+								<div class="refresh-container">
+									<div class="la-anim-1"></div>
+								</div>
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">Pending Items</h6>
+									</div>
+									<div class="pull-right">
+										<a href="#" class="pull-left inline-block refresh mr-15">
+											<i class="zmdi zmdi-replay"></i>
+										</a>
+										<div class="pull-left inline-block dropdown">
+											<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
+											<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>option 1</a></li>
+												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>option 2</a></li>
+												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>option 3</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div id="e_chart_1" class="" style="height:242px;"></div>
+									<div class="label-chatrs mt-15">
+										<div class="mb-5">
+											<span class="clabels inline-block bg-green mr-5"></span>
+											<span class="clabels-text font-12 inline-block txt-dark capitalize-font">Actions pending</span>
+										</div>
+										<div class="mb-5">
+											<span class="clabels inline-block bg-light-green mr-5"></span>
+											<span class="clabels-text font-12 inline-block txt-dark capitalize-font">decision pending</span>
+										</div>
+										<div class="">
+											<span class="clabels inline-block bg-xtra-light-green mr-5"></span>
+											<span class="clabels-text font-12 inline-block txt-dark capitalize-font">chage request pending</span>
+										</div>										
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+						<div class="panel panel-default card-view panel-refresh">
+							<div class="refresh-container">
+								<div class="la-anim-1"></div>
+							</div>
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">Task Status</h6>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="pull-left inline-block refresh">
+										<i class="zmdi zmdi-replay"></i>
+									</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div id="e_chart_2" class="" style="height:330px;"></div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row -->
+				
+				<!-- Row -->
+				<div class="row">
+					<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
+						<div class="panel card-view bg-green">
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body row pa-0">
+									<div class="sm-data-box">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left txt-light">
+													<span class="weight-500 uppercase-font block">due</span>
+													<span class="block counter">$<span class="counter-anim">15678</span></span>
+												</div>
+												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right txt-light">
+													<span class="weight-500 uppercase-font block">overdue</span>
+													<span class="block counter">$<span class="counter-anim">45678</span></span>
+												</div>
+											</div>	
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel card-view">
+							<div class="panel-heading small-panel-heading relative">
+								<div class="pull-left">
+									<h6 class="panel-title">Monthly Revenue</h6>
+								</div>
+								<div class="clearfix"></div>
+								<div class="head-overlay"></div>
+							</div>		
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body row pa-0">
+									<div class="sm-data-box">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+													<span class="block"><i class="zmdi zmdi-trending-up txt-success font-18 mr-5"></i><span class="weight-500 uppercase-font">growth</span></span>
+													<span class="txt-dark block counter">$<span class="counter-anim">15,678</span></span>
+												</div>
+												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+													<div id="sparkline_4" class="sp-small-chart" ></div>
+												</div>
+											</div>	
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default card-view">
+								<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">My Stats</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body row">
+										<div class="">
+											<div class="pl-15 pr-15 mb-15">
+												<div class="pull-left">
+													<i class="zmdi zmdi-collection-folder-image inline-block mr-10 font-16"></i>
+													<span class="inline-block txt-dark">Active Projects</span>
+												</div>	
+												<span class="inline-block txt-warning pull-right weight-500">12</span>
+												<div class="clearfix"></div>
+											</div>
+											<hr class="light-grey-hr mt-0 mb-15"/>
+											<div class="pl-15 pr-15 mb-15">
+												<div class="pull-left">
+													<i class="zmdi zmdi-format-list-bulleted inline-block mr-10 font-16"></i>
+													<span class="inline-block txt-dark">Task Pending</span>
+												</div>	
+												<span class="inline-block txt-danger pull-right weight-500">23</span>
+												<div class="clearfix"></div>
+											</div>
+											<hr class="light-grey-hr mt-0 mb-15"/>
+											<div class="pl-15 pr-15 mb-15">
+												<div class="pull-left">
+													<i class="zmdi zmdi-ticket-star inline-block mr-10 font-16"></i>
+													<span class="inline-block txt-dark">Support Tickets</span>
+												</div>	
+												<span class="inline-block txt-primary pull-right weight-500">43</span>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+					
+					<div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">Project Status</h6>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="pull-left inline-block full-screen mr-15">
+										<i class="zmdi zmdi-fullscreen"></i>
+									</a>
+									<div class="pull-left inline-block dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
+										<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Update</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>Edit</a></li>
+											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>Remove</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body row pa-0">
+									<div class="table-wrap">
+										<div class="table-responsive">
+										  <table class="table table-hover mb-0">
+											<thead>
+											  <tr>
+												<th>Task</th>
+												<th>Progress</th>
+												<th>Deadline</th>
+												</tr>
+											</thead>
+											<tbody>
+											  <tr>
+												<td>CMVM Digitisation of paper records</td>
+												<td><div class="progress progress-xs mb-0 ">
+													<div class="progress-bar progress-bar-danger" style="width: 35%"></div>
+												  </div></td>
+												<td>Jan 18, 2018</td>
+												
+											  </tr>
+											  <tr>
+												<td>Data management plans</td>
+												<td><div class="progress progress-xs mb-0 ">
+													<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+												  </div></td>
+												<td>Dec 1, 2016</td>
+												
+											  </tr>
+											  <tr>
+												<td>REF readiness</td>
+												<td><div class="progress progress-xs mb-0 ">
+													<div class="progress-bar progress-bar-success" style="width: 100%"></div>
+												  </div></td>
+												<td>Nov 12, 2016</td>
+												
+											  </tr>
+											  <tr>
+												<td>Storage Strategy</td>
+												<td><div class="progress progress-xs mb-0 ">
+													<div class="progress-bar progress-bar-primary" style="width: 70%"></div>
+												  </div></td>
+												<td>Oct 9, 2016</td>
+												
+											  </tr>
+											  <tr>
+												<td>Network Infrastructure strategy</td>
+												<td><div class="progress progress-xs mb-0 ">
+													<div class="progress-bar progress-bar-primary" style="width: 85%"></div>
+												  </div></td>
+												<td>Sept 2, 2016</td>
+												
+											  </tr>
+											  <tr>
+												<td>Flexible Server hosting</td>
+												<td><div class="progress progress-xs mb-0 ">
+													<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+												  </div></td>
+												<td>August 11, 2015</td>
+												
+											  </tr>
+											   <tr>
+												<td>Virtual Desktop software access</td>
+												<td><div class="progress progress-xs mb-0 ">
+													<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+												  </div></td>
+												<td>June 11, 2016</td>
+												
+											  </tr>
+											  <tr>
+												<td>Server hosting Issues</td>
+												<td><div class="progress progress-xs mb-0 ">
+													<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+												  </div></td>
+												<td>August 11, 2016</td>
+												
+											  </tr>
+											</tbody>
+										  </table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<!-- Row -->
+				
+				<!-- Row -->
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">customer support</h6>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="pull-left inline-block full-screen">
+										<i class="zmdi zmdi-fullscreen"></i>
+									</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body row pa-0">
+									<div class="table-wrap">
+										<div class="table-responsive">
+											<table class="table display product-overview border-none" id="support_table">
+												<thead>
+													<tr>
+														<th>ticket ID</th>
+														<th>Customer</th>
+														<th>issue</th>
+														<th>Date</th>
+														<th>Status</th>
+														<th>Actions</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>#85457898</td>
+														<td>Jens Brincker</td>
+														<td>Droopy chart</td>
+														<td>Oct 27</td>
+														<td>
+															<span class="label label-success">done</span>
+														</td>
+														<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+													</tr>
+													<tr>
+														<td>#85457897</td>
+														<td>Mark Hay</td>
+														<td>PSD resolution</td>
+														<td>Oct 26</td>
+														<td>
+															<span class="label label-warning ">Pending</span>
+														</td>
+														<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+													</tr>
+													<tr>
+														<td>#85457896</td>
+														<td>Anthony Davie</td>
+														<td>Cinnabar</td>
+														<td>Oct 25</td>
+														<td>
+															<span class="label label-success ">done</span>
+														</td>
+														<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+													</tr>
+													<tr>
+														<td>#85457895</td>
+														<td>David Perry</td>
+														<td>Felix PSD</td>
+														<td>Oct 25</td>
+														<td>
+															<span class="label label-danger">pending</span>
+														</td>
+														<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+													</tr>
+													<tr>
+														<td>#85457894</td>
+														<td>Anthony Davie</td>
+														<td>Beryl iphone</td>
+														<td>Oct 25</td>
+														<td>
+															<span class="label label-success ">done</span>
+														</td>
+														<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+													</tr>
+													<tr>
+														<td>#85457893</td>
+														<td>Alan Gilchrist</td>
+														<td>Pogody button</td>
+														<td>Oct 22</td>
+														<td>
+															<span class="label label-warning ">Pending</span>
+														</td>
+														<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+													</tr>
+													<tr>
+														<td>#85457892</td>
+														<td>Mark Hay</td>
+														<td>Beavis sidebar</td>
+														<td>Oct 18</td>
+														<td>
+															<span class="label label-success ">done</span>
+														</td>
+														<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+													</tr>
+													<tr>
+														<td>#85457891</td>
+														<td>Sue Woodger</td>
+														<td>Pogody header</td>
+														<td>Oct 17</td>
+														<td>
+															<span class="label label-danger">pending</span>
+														</td>
+														<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>	
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row -->
+			</div>
+			<!-- Modal -->
+			<div id="brouillard" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+							<h5 class="modal-title">Brouillard</h5>
+						</div>
+						<div class="modal-body">
+							<form action="/gestCaisse/brouillards/" method="post">
+								{% csrf_token %}
+								<div class="row">
+								<input class="form-control" type="hidden" name="test" value="date">
+								<div class="col-lg-6">
+									<label for="">debut periode</label>
+									<input class="form-control" type="date" name="debut" id="login">
+								</div>
+								<div class="col-lg-6">
+									<label for="">fin periode</label>
+									<input class="form-control" type="date" name="fin" id="login">
+								</div>
+								<div class="form-group">
+									<label class="control-label mb-10" for="">Caisse</label>
+									<select class="form-control" name="caisse" onChange="gestionTiers()" id="choix5" aria-label=".form-select-lg example">
+										
+										{% for element in caisse %}
+										<option value="{{element.codeCaisse}}">{{element.libele}}</option>
+										{% endfor %}
+									</select>
+								</div>
+								</div>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+								<button type="submit" class="btn btn-danger">Valider</button>
+							</form>
+						</div>
+						<div class="modal-footer">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--      -->
+			<div id="operation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+							<h5 class="modal-title">Opération de caisse</h5>
+						</div>
+						<div class="modal-body">
+							<form action="/gestCaisse/operations/" method="post">
+								{% csrf_token %}
+								<div class="form-group">
+									<label class="control-label mb-10" for="">Caisse</label>
+									<select class="form-control" name="caisse" onChange="gestionTiers()" id="choix5" aria-label=".form-select-lg example">
+										
+										{% for element in caisse %}
+										<option value="{{element.codeCaisse}}">{{element.libele}}</option>
+										{% endfor %}
+									</select>
+								</div>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+								<button type="submit" class="btn btn-danger">Valider</button>
+							</form>
+						</div>
+						<div class="modal-footer">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal -->
+			<!-- Footer -->
+			<footer class="footer container-fluid pl-30 pr-30">
+				<div class="row">
+					<div class="col-sm-12">
+						<p>2018 &copy; Droopy. Pampered by Hencework</p>
+					</div>
+				</div>
+			</footer>
+			<!-- /Footer -->
+			
+		</div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /#wrapper -->
+	
+	<!-- JavaScript -->
+	{% load static %}
+    <!-- jQuery -->
+    <script src="{% static 'gestCaisse/vendors/bower_components/jquery/dist/jquery.min.js'%}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static '/gestCaisse/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js'%}"></script>
+    
+	<!-- Data table JavaScript -->
+	<script src="{% static '/gestCaisse/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js'%}"></script>
+	
+	<!-- Slimscroll JavaScript -->
+	<script src="{% static '/gestCaisse/dist/js/jquery.slimscroll.js'%}"></script>
+	
+	<!-- Progressbar Animation JavaScript -->
+	<script src="{% static 'gestCaisse/vendors/bower_components/waypoints/lib/jquery.waypoints.min.js'%}"></script>
+	<script src="{% static 'gestCaisse/vendors/bower_components/jquery.counterup/jquery.counterup.min.js'%}"></script>
+	
+	<!-- Fancy Dropdown JS -->
+	<script src="{% static 'gestCaisse/dist/js/dropdown-bootstrap-extended.js'%}"></script>
+	
+	<!-- Sparkline JavaScript -->
+	<script src="{% static 'gestCaisse/vendors/jquery.sparkline/dist/jquery.sparkline.min.js'%}"></script>
+	
+	<!-- Owl JavaScript -->
+	<script src="{% static 'gestCaisse/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js'%}"></script>
+	
+	<!-- Switchery JavaScript -->
+	<script src="{% static 'gestCaisse/vendors/bower_components/switchery/dist/switchery.min.js'%}"></script>
+	
+	<!-- EChartJS JavaScript -->
+	<script src="{% static 'gestCaisse/vendors/bower_components/echarts/dist/echarts-en.min.js'%}"></script>
+	<script src="{% static 'gestCaisse/vendors/echarts-liquidfill.min.js'%}"></script>
+	
+	<!-- Toast JavaScript -->
+	<script src="{% static 'gestCaisse/vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js'%}"></script>
+	
+	<!-- Init JavaScript -->
+	<script src="{% static 'gestCaisse/dist/js/init.js'%}"></script>
+	<script src="{% static 'gestCaisse/dist/js/dashboard-data.js'%}"></script>
+	<!-- Init JavaScript -->
+</body>
+
+</html>
